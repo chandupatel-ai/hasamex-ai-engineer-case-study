@@ -37,8 +37,8 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 GUIDE_PATH = os.path.join(DATA_DIR, "interview_guide.txt")
 
 PROVIDER_MODELS = {
-    "Google Gemini (free)": ["gemini-2.5-flash", "gemini-2.5-flash-lite"],
     "Groq (free)": ["openai/gpt-oss-120b", "openai/gpt-oss-20b"],
+    "Google Gemini (free)": ["gemini-2.5-flash", "gemini-2.5-flash-lite"],
     "OpenAI (paid)": ["gpt-4o-mini", "gpt-4o", "gpt-4.1-mini"],
 }
 
