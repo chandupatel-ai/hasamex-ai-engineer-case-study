@@ -14,12 +14,18 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Then, in the sidebar, pick a provider and paste in the matching API key:
+Then, in the sidebar, pick a provider and paste in the matching API key.
+
+**This submission was built and tested with Groq** (free tier, no credit card, very fast —
+runs OpenAI's open-weight GPT-OSS models). Get a free key at
+[console.groq.com/keys](https://console.groq.com/keys), select "Groq (free)" in the
+sidebar, and paste it in.
+
+The app also supports two other providers as drop-in alternatives, useful if Groq's free-tier
+rate limits are ever hit:
 
 - **Google Gemini (free)** — genuine free tier, no credit card. Get a key at
-  [aistudio.google.com/apikey](https://aistudio.google.com/apikey). Default provider.
-- **Groq (free)** — genuine free tier, no credit card, very fast (runs Llama 3.3 70B).
-  Get a key at [console.groq.com/keys](https://console.groq.com/keys).
+  [aistudio.google.com/apikey](https://aistudio.google.com/apikey).
 - **OpenAI (paid)** — requires billing credit on your OpenAI account. Get a key at
   [platform.openai.com/api-keys](https://platform.openai.com/api-keys).
 
@@ -39,7 +45,7 @@ upload needed to try it, but you can upload your own `.txt` transcripts in the s
   retrieval layer here would add complexity and a new failure mode (missed chunks) without
   any real benefit. See "Scaling to 30+ transcripts" below for how this changes at scale.
 - **Model**: `gemini-2.5-flash` by default (free tier, fast, accurate enough for this
-  extraction task). Groq (`llama-3.3-70b-versatile`) and OpenAI (`gpt-4o-mini`, `gpt-4o`,
+  extraction task). Groq (`openai/gpt-oss-120b`) and OpenAI (`gpt-4o-mini`, `gpt-4o`,
   `gpt-4.1-mini`) are also supported via a provider switch in the sidebar. Groq is called
   through its OpenAI-compatible endpoint, so the same code path (and JSON schema) handles
   both Groq and OpenAI.
